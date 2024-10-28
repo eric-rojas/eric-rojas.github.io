@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Flujo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="inicio" class="ventana">
+        <h1>Seleccione una Opción</h1>
+        <button onclick="abrirVentana('obinutuzumab')">Obinutuzumab</button>
+        <button onclick="abrirVentana('rituximab')">Rituximab</button>
+        <button onclick="abrirVentana('diagrama')">Diagrama</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+   <!-- Ventana de Obinutuzumab -->
+    <div id="obinutuzumab" class="ventana">
+        <h2>Obinutuzumab</h2>
+        <button onclick="abrirVentana('reacciones')" style="background-color: #800000; color: white;"> <!-- Color corinto --> Reacciones Relacionadas con la Infusión</button>
+        <button onclick="abrirVentana('infecciones')" style="background-color: #800000; color: white;"> <!-- Color corinto -->Infecciones</button>
+        <button onclick="abrirVentana('condiciones_cardiacas')" style="background-color: #FF0000; color: white;"> <!-- Color rojo -->Empeoramiento de Condiciones Cardiacas Preexistentes</button>
+        <button onclick="abrirVentana('trombocitopenia')" style="background-color: #FF0000; color: white;"> <!-- Color rojo -->Trombocitopenia</button>
+        <button onclick="abrirVentana('tumores_secundarios')" style="background-color: #FFFF00; color: black;"> <!-- Color amarillo -->Tumores Secundarios</button>
+        <button onclick="abrirVentana('dolor_musculoesqueletico')" style="background-color: #FFFF00; color: black;"> <!-- Color amarillo -->Dolor Musculoesquelético</button>
+        <button onclick="abrirVentana('cefalea')" style="background-color: #FFFF00; color: black;"> <!-- Color amarillo -->Cefalea</button>
+        <button onclick="abrirVentana('fatiga')" style="background-color: #00ff2a; color: black;"> <!-- Color amarillo -->Fatiga</button>
+        <button onclick="abrirVentana('insomnio')"style="background-color: #00ff2a; color: black;"> <!-- Color amarillo -->Insomnio</button>
+        <button onclick="abrirVentana('inicio')">Volver al Inicio</button>
+    </div>
+
+    <!-- Ventana de Reacciones Relacionadas con la Infusión -->
+    <div id="reacciones" class="ventana" >
+        <h2>Reacciones Relacionadas con la Infusión</h2>
+        <button onclick="abrirVentana('premedicacion')">Premedicación</button>
+        <button onclick="abrirVentana('monitorizacion')">Monitorización</button>
+        
+        <button onclick="abrirVentana('ajustes_infusiones')">Ajustes para Infusiones Posteriores</button>
+        <button onclick="abrirVentana('obinutuzumab')">Volver a Obinutuzumab</button>
+    </div>
+
+    <!-- Ventana de Premedicación -->
+    <div id="premedicacion" class="ventana" >
+        <h3>Premedicación</h3>
+        <p>Administrar premedicación con corticosteroides intravenosos, analgésicos/antipiréticos orales y antihistamínicos.</p>
+        <p>Premedicación obligatoria antes de la primera infusión para reducir el riesgo de IRRs (CLL y FL).</p>
+        <ul>
+            <li>Corticosteroides intravenosos (100 mg de prednisona/prednisolona o equivalente de 20 mg de dexametasona o 80 mg de metilprednisolona) al menos 1 hora antes de la infusión.</li>
+            <li>Analgésico/antipirético oral (1,000 mg de paracetamol) al menos 30 minutos antes.</li>
+            <li>Antihistamínico oral (e.g., 50 mg de difenhidramina) al menos 30 minutos antes.</li>
+        </ul>
+        <p>Considerar suspender medicamentos antihipertensivos 12 horas antes y durante la infusión.</p>
+        <button onclick="abrirVentana('reacciones')">Volver a Reacciones Relacionadas</button>
+    </div>
+
+    <!-- Ventana de Monitorización -->
+    <div id="monitorizacion" class="ventana" >
+        <h3>Monitorización</h3>
+        <p>Ciclo 1, Día 1 (CLL): Administrar los primeros 100 mg a una velocidad de 25 mg/h durante 4 horas. No aumentar la velocidad.</p>
+        <p>Día 2: Si no se presentan IRRs, administrar a 50 mg/h e incrementar la velocidad en 50 mg/h cada 30 minutos hasta un máximo de 400 mg/h.</p>
+        <p>Manejo según la Gravedad de la IRR</p>
+        <p><strong>IRR Grado 1-2 (leve a moderada):</strong> Reducir la velocidad de infusión, tratar los síntomas y reiniciar a la mitad de la velocidad previa.</p>
+        <p><strong>IRR Grado 3 (severa):</strong> Interrumpir temporalmente la infusión y tratar los síntomas agresivamente.</p>
+        <p><strong>IRR Grado 4 (potencialmente mortal):</strong> Detener la infusión inmediatamente y discontinuar el tratamiento.</p>
+        <button onclick="abrirVentana('reacciones')">Volver a Reacciones Relacionadas</button>
+    </div>
+
+
+    <!-- Ventana de Ajustes para Infusiones Posteriores -->
+    <div id="ajustes_infusiones" class="ventana" >
+        <h3>Ajustes para Infusiones Posteriores</h3>
+        <p>Para pacientes que experimentaron IRR Grado 1-2: considerar premedicación más intensa y reducción de la velocidad de infusión.</p>
+        <p>Para pacientes que experimentaron IRR Grado 3: considerar discontinuar el tratamiento.</p>
+        <button onclick="abrirVentana('reacciones')">Volver a Reacciones Relacionadas</button>
+    </div>
+
+ <!-- Ventana de Infecciones -->
+<div id="infecciones" class="ventana" >
+    <h2>Infecciones</h2>
+    <button onclick="abrirVentana('profilaxis')">Profilaxis</button>
+    <button onclick="abrirVentana('monitorizacion_infecciones')">Monitorización durante el tratamiento</button>
+    <button onclick="abrirVentana('tratamiento_infecciones')">Tratamiento de infecciones</button>
+    <button onclick="abrirVentana('obinutuzumab')">Volver a Obinutuzumab</button>
+</div>
+
+<!-- Ventana de Profilaxis -->
+<div id="profilaxis" class="ventana">
+    <h3>Profilaxis</h3>
+    <ul>
+        <li>Considerar profilaxis antiviral y antifúngica, especialmente en pacientes con alto riesgo.</li>
+        <li>La administración de factores estimulantes de colonias de granulocitos (G-CSF) puede reducir el riesgo de infecciones graves.</li>
+        <li>Administrar profilaxis para el síndrome de lisis tumoral en pacientes de alto riesgo.</li>
+    </ul>
+    <button onclick="abrirVentana('infecciones')">Volver a Infecciones</button>
+</div>
+
+<!-- Ventana de Monitorización durante el tratamiento -->
+<div id="monitorizacion_infecciones" class="ventana">
+    <h3>Monitorización durante el tratamiento</h3>
+    <ul>
+        <li>Vigilar regularmente signos y síntomas de infección.</li>
+        <li>Realizar pruebas de laboratorio periódicas (recuento de glóbulos blancos, neutrófilos).</li>
+    </ul>
+    <button onclick="abrirVentana('infecciones')">Volver a Infecciones</button>
+</div>
+
+<!-- Ventana de Tratamiento de Infecciones -->
+<div id="tratamiento_infecciones" class="ventana">
+    <h3>Tratamiento de infecciones</h3>
+    <ul>
+        <li>En presencia de una infección activa, no administrar Gazyvaro hasta que la infección esté controlada.</li>
+        <li>En casos de infecciones graves, se recomienda interrumpir el tratamiento hasta la resolución de la infección y reanudar con precaución.</li>
+    </ul>
+    <button onclick="abrirVentana('infecciones')">Volver a Infecciones</button>
+</div>
+
+
+ <!-- Ventana de Empeoramiento de Condiciones Cardíacas Preexistentes -->
+<div id="condiciones_cardiacas" class="ventana" >
+    <h2>Empeoramiento de Condiciones Cardíacas Preexistentes</h2>
+    <ul>
+        <li>Los pacientes con antecedentes de enfermedades cardíacas, como arritmias, insuficiencia cardíaca o angina de pecho, deben ser monitoreados estrechamente durante y después de la infusión, ya que los eventos cardíacos pueden empeorar.</li>
+        <li>Durante la infusión, se debe monitorear signos de insuficiencia cardíaca o arritmias. Si se presentan síntomas, reducir la velocidad de la infusión o interrumpirla.</li>
+        <li>En pacientes con condiciones cardíacas preexistentes, administrar fluidos con precaución para evitar una sobrecarga de volumen que podría empeorar la insuficiencia cardíaca.</li>
+        <li>Si el paciente presenta signos de angina, infarto de miocardio o insuficiencia cardíaca, suspender la infusión y tratar la condición según protocolos cardíacos estándar.</li>
+    </ul>
+    <button onclick="abrirVentana('obinutuzumab')">Volver a Obinutuzumab</button>
+</div>
+
+
+<!-- Ventana de Trombocitopenia -->
+<div id="trombocitopenia" class="ventana" >
+    <h2>Trombocitopenia</h2>
+    <button onclick="abrirVentana('monitorizacion_trombocitopenia')">Monitorización</button>
+    <button onclick="abrirVentana('manejo_gravedad')">Manejo según la gravedad</button>
+    <button onclick="abrirVentana('complicaciones_hemorragicas')">Manejo de complicaciones hemorrágicas</button>
+    <button onclick="abrirVentana('ajustes_tratamiento')">Ajustes de tratamiento</button>
+    <button onclick="abrirVentana('obinutuzumab')">Volver a Obinutuzumab</button>
+</div>
+
+<!-- Ventana de Monitorización para Trombocitopenia -->
+<div id="monitorizacion_trombocitopenia" class="ventana" >
+    <h3>Monitorización</h3>
+    <ul>
+        <li>Realizar recuentos plaquetarios regulares, especialmente durante el primer ciclo.</li>
+        <li>Estar alerta a signos de sangrado.</li>
+    </ul>
+    <button onclick="abrirVentana('trombocitopenia')">Volver a Trombocitopenia</button>
+</div>
+
+<!-- Ventana de Manejo según la gravedad para Trombocitopenia -->
+<div id="manejo_gravedad" class="ventana" >
+    <h3>Manejo según la gravedad</h3>
+    <ul>
+        <li>Para trombocitopenia leve a moderada (Grado 1-2):
+            <ul>
+                <li>Continuar el tratamiento con monitorización estrecha.</li>
+            </ul>
+        </li>
+        <li>Para trombocitopenia severa (Grado 3):
+            <ul>
+                <li>Considerar retrasar la dosis hasta recuperación a Grado 1 o basal.</li>
+                <li>Considerar transfusión de plaquetas si clínicamente indicado.</li>
+            </ul>
+        </li>
+        <li>Para trombocitopenia potencialmente mortal (Grado 4):
+            <ul>
+                <li>Interrumpir el tratamiento.</li>
+                <li>Administrar transfusión de plaquetas.</li>
+                <li>Proporcionar cuidados de soporte intensivos.</li>
+            </ul>
+        </li>
+    </ul>
+    <button onclick="abrirVentana('trombocitopenia')">Volver a Trombocitopenia</button>
+</div>
+
+<!-- Ventana de Manejo de complicaciones hemorrágicas para Trombocitopenia -->
+<div id="complicaciones_hemorragicas" class="ventana" >
+    <h3>Manejo de complicaciones hemorrágicas</h3>
+    <ul>
+        <li>Tratar inmediatamente cualquier evento hemorrágico.</li>
+        <li>Interrumpir Gazyvaro y administrar terapia de reemplazo de factores si es necesario.</li>
+    </ul>
+    <button onclick="abrirVentana('trombocitopenia')">Volver a Trombocitopenia</button>
+</div>
+
+<!-- Ventana de Ajustes de tratamiento para Trombocitopenia -->
+<div id="ajustes_tratamiento" class="ventana" >
+    <h3>Ajustes de tratamiento</h3>
+    <ul>
+        <li>Para trombocitopenia recurrente, considerar reducción de dosis o discontinuación.</li>
+    </ul>
+    <button onclick="abrirVentana('trombocitopenia')">Volver a Trombocitopenia</button>
+</div>
+
+
+<!-- Ventana de Tumores Secundarios -->
+<div id="tumores_secundarios" class="ventana">
+    <h2>Tumores Secundarios</h2>
+    <p>No necesita manejo</p>
+    <button onclick="abrirVentana('obinutuzumab')" > Volver a Obinutuzumab</button>
+</div>
+
+<!-- Ventana de Dolor Musculoesquelético -->
+<div id="dolor_musculoesqueletico" class="ventana">
+    <h2>Dolor Musculoesquelético</h2>
+    <p>No necesita manejo</p>
+    <button onclick="abrirVentana('obinutuzumab')" > Volver a Obinutuzumab</button>
+</div>
+
+<!-- Ventana de Cefalea -->
+<div id="cefalea" class="ventana">
+    <h2>Cefalea</h2>
+    <p>No necesita manejo</p>
+    <button onclick="abrirVentana('obinutuzumab')" > Volver a Obinutuzumab</button>
+</div>
+
+<!-- Ventana de Fatiga -->
+<div id="fatiga" class="ventana">
+    <h2>Fatiga</h2>
+    <p>No necesita manejo</p>
+    <button onclick="abrirVentana('obinutuzumab')" > Volver a Obinutuzumab</button>
+</div>
+
+<!-- Ventana de Insomnio -->
+<div id="insomnio" class="ventana">
+    <h2>Insomnio</h2>
+    <p>No necesita manejo</p>
+    <button onclick="abrirVentana('obinutuzumab')" > Volver a Obinutuzumab</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Ventana de Rituximab -->
+<div id="rituximab" class="ventana">
+    <h2>Rituximab</h2>
+    <button onclick="abrirVentana('reacciones_rituximab')" style="background-color: #800000; color: white;"> <!-- Color corinto --> Reacciones Relacionadas con la Infusión</button>
+    <button onclick="abrirVentana('infecciones_rituximab')" style="background-color: #FF0000; color: white;"> <!-- Color rojo --> Infecciones</button>
+    <button onclick="abrirVentana('leucoencefalopatia')" style="background-color: #FF0000; color: white;"> <!-- Color rojo --> Leucoencefalopatía Multifocal Progresiva</button>
+    <button onclick="abrirVentana('reacciones_cardiovasculares2')" style="background-color: #FFFF00; color: black;"> <!-- Color amarillo --> Reacciones Cardiovasculares</button>
+    <button onclick="abrirVentana('reactivacion_hepatitis_b')" style="background-color: #FFFF00; color: black;"> <!-- Color amarillo --> Reactivación de Hepatitis B</button>
+    <button onclick="abrirVentana('astenia')" style="background-color: #FFFF00; color: black;"> <!-- Color amarillo --> Astenia</button>
+    <button onclick="abrirVentana('reacciones_cardiovasculares1')" style="background-color: #90EE90; color: black;"> <!-- Color verde claro --> Reacciones Cardiovasculares</button>
+    <button onclick="abrirVentana('inicio')" > <!-- Color corinto --> Volver al Inicio</button>
+</div>
+
+<!-- Ventana de Reacciones Relacionadas con la Infusión -->
+<div id="reacciones_rituximab" class="ventana">
+    <h2>Reacciones Relacionadas con la Infusión</h2>
+    <button onclick="abrirVentana('premedicacionn')" > <!-- Color corinto --> Premedicación</button>
+    <button onclick="abrirVentana('ajustes_velocidad')" > <!-- Color corinto --> Administración y Ajustes de la Velocidad de Infusión</button>
+    <button onclick="abrirVentana('manejo_reaccioness')" > <!-- Color corinto --> Manejo de Reacciones por Grado de Severidad</button>
+    <button onclick="abrirVentana('alta_carga_tumoral')" > <!-- Color corinto --> Para Pacientes con Alta Carga Tumoral</button>
+    <button onclick="abrirVentana('rituximab')">Volver a Rituximab</button>
+</div>
+
+<!-- Ventana de Premedicación -->
+<div id="premedicacionn" class="ventana">
+    <h2>Premedicación</h2>
+    <p>
+        Premedicación obligatoria antes de la infusión para reducir el riesgo de IRRs:
+        <ul>
+            <li>Antipirético (paracetamol) y antihistamínico (difenhidramina o equivalente) al menos 30 minutos antes de la infusión.</li>
+            <li>Glucocorticoides intravenosos si el tratamiento con Mabthera no se administra junto con quimioterapia que contenga glucocorticoides (para linfoma no Hodgkin y leucemia linfocítica crónica).</li>
+        </ul>
+    </p>
+    <button onclick="abrirVentana('reacciones_rituximab')">Volver a Reacciones Relacionadas con la Infusión</button>
+</div>
+
+<!-- Ventana de Administración y Ajustes de la Velocidad de Infusión -->
+<div id="ajustes_velocidad" class="ventana">
+    <h2>Administración y Ajustes de la Velocidad de Infusión</h2>
+    <p>
+        <strong>Primera infusión:</strong>
+        <ul>
+            <li>Iniciar a una velocidad de 50 mg/h. Después de 30 minutos, incrementar en 50 mg/h cada 30 minutos hasta un máximo de 400 mg/h.</li>
+        </ul>
+        <strong>Infusiones subsecuentes:</strong>
+        <ul>
+            <li>Iniciar a 100 mg/h e incrementar en 100 mg/h cada 30 minutos hasta un máximo de 400 mg/h.</li>
+        </ul>
+    </p>
+    <button onclick="abrirVentana('reacciones_rituximab')">Volver a Reacciones Relacionadas con la Infusión</button>
+</div>
+
+<!-- Ventana de Manejo de Reacciones por Grado de Severidad -->
+<div id="manejo_reaccioness" class="ventana">
+    <h2>Manejo de Reacciones por Grado de Severidad</h2>
+    <p>
+        <strong>Grado 1-2 (Leve a Moderado):</strong>
+        <ul>
+            <li>Reducir la velocidad de infusión. Se puede administrar tratamiento sintomático con antihistamínicos, antipiréticos o líquidos intravenosos. Tras la resolución de los síntomas, reanudar la infusión a una velocidad reducida.</li>
+        </ul>
+        <strong>Grado 3 (Severo):</strong>
+        <ul>
+            <li>Interrumpir la infusión inmediatamente y tratar con glucocorticoides y broncodilatadores si es necesario. Reanudar la infusión a la mitad de la velocidad inicial una vez resueltos los síntomas.</li>
+        </ul>
+        <strong>Grado 4 (Amenaza la vida):</strong>
+        <ul>
+            <li>Suspender la infusión de forma permanente y tratar con soporte médico intensivo, incluyendo la administración de epinefrina y otros agentes necesarios para controlar la reacción.</li>
+        </ul>
+    </p>
+    <button onclick="abrirVentana('reacciones_rituximab')">Volver a Reacciones Relacionadas con la Infusión</button>
+</div>
+
+<!-- Ventana para Pacientes con Alta Carga Tumoral -->
+<div id="alta_carga_tumoral" class="ventana">
+    <h2>Para Pacientes con Alta Carga Tumoral</h2>
+    <p>
+        <strong>Consideraciones:</strong>
+        <ul>
+            <li>Considerar una velocidad de infusión reducida o dividir la dosis en dos días.</li>
+            <li>Para pacientes con antecedentes de enfermedad cardíaca: Considerar suspender medicamentos antihipertensivos 12 horas antes de la infusión.</li>
+        </ul>
+    </p>
+    <button onclick="abrirVentana('reacciones_rituximab')">Volver a Reacciones Relacionadas con la Infusión</button>
+</div>
+
+
+<!-- Ventana de Infecciones -->
+<div id="infecciones_rituximab" class="ventana">
+    <h2>Infecciones</h2>
+    <button onclick="abrirVentana('evaluacion_tratamiento')" > <!-- Color rojo --> Evaluación Antes del Tratamiento</button>
+    <button onclick="abrirVentana('profilaxiss')" > <!-- Color rojo --> Profilaxis</button>
+    <button onclick="abrirVentana('manejo_infeccioness')"> <!-- Color rojo --> Manejo de Infecciones Durante el Tratamiento</button>
+    <button onclick="abrirVentana('rituximab')">Volver a Rituximab</button>
+</div>
+
+<!-- Ventana de Evaluación Antes del Tratamiento -->
+<div id="evaluacion_tratamiento" class="ventana">
+    <h2>Evaluación Antes del Tratamiento</h2>
+    <p>
+        Se debe realizar un cribado de hepatitis B en todos los pacientes antes de iniciar el tratamiento:
+        <ul>
+            <li>Esto incluye pruebas de HBsAg y HBcAb, complementadas con otros marcadores según las directrices locales.</li>
+            <li>No administrar Mabthera en pacientes con infecciones graves activas (e.g., tuberculosis o sepsis).</li>
+        </ul>
+        Completar todas las vacunaciones al menos 4 semanas antes de iniciar MabThera.
+        <ul>
+            <li>No administrar vacunas con virus vivos durante o después del tratamiento.</li>
+        </ul>
+    </p>
+    <button onclick="abrirVentana('infecciones_rituximab')">Volver a Infecciones</button>
+</div>
+
+<!-- Ventana de Profilaxis -->
+<div id="profilaxiss" class="ventana">
+    <h2>Profilaxis</h2>
+    <p>
+        En pacientes con riesgo de infecciones como Pneumocystis jirovecii, se recomienda profilaxis antimicrobiana durante y después del tratamiento.
+    </p>
+    <button onclick="abrirVentana('infecciones_rituximab')">Volver a Infecciones</button>
+</div>
+
+<!-- Ventana de Manejo de Infecciones Durante el Tratamiento -->
+<div id="manejo_infeccioness" class="ventana">
+    <h2>Manejo de Infecciones Durante el Tratamiento</h2>
+    <p>
+        Si un paciente presenta signos o síntomas de infección durante el tratamiento, se debe interrumpir temporalmente Mabthera hasta que la infección esté controlada.
+        <ul>
+            <li>Reevaluar el riesgo de infecciones antes de reiniciar el tratamiento con Mabthera tras la resolución de la infección.</li>
+        </ul>
+    </p>
+    <button onclick="abrirVentana('infecciones_rituximab')">Volver a Infecciones</button>
+</div>
+
+
+<!-- Ventana de Leucoencefalopatía Multifocal Progresiva -->
+<div id="leucoencefalopatia" class="ventana">
+    <h2>Leucoencefalopatía Multifocal Progresiva</h2>
+    <p>Monitorear regularmente a los pacientes para detectar cualquier síntoma o signo neurológico nuevo o que empeore, que pueda sugerir LMP.</p>
+    <p>
+        Si se sospecha LMP, suspender inmediatamente la administración de MabThera.
+    </p>
+    <p>
+        Realizar evaluaciones adicionales:
+        <ul>
+            <li>a. Resonancia magnética cerebral, preferiblemente con contraste.</li>
+            <li>b. Análisis del líquido cefalorraquídeo para detectar ADN del virus JC.</li>
+            <li>c. Repetir las evaluaciones neurológicas.</li>
+        </ul>
+    </p>
+    <p>
+        Mantener la suspensión de MabThera hasta que se haya descartado la LMP.
+    </p>
+    <p>
+        Si se confirma que un paciente ha desarrollado LMP, discontinuar permanentemente la administración de MabThera.
+    </p>
+    <button onclick="abrirVentana('rituximab')">Volver a Rituximab</button>
+</div>
+
+
+<!-- Ventana de Reacciones Cardiovasculares -->
+<div id="reacciones_cardiovasculares2" class="ventana">
+    <h2>Reacciones Cardiovasculares</h2>
+    <p>No necesita manejo.</p>
+    <button onclick="abrirVentana('rituximab')">Volver a Rituximab</button>
+</div>
+
+<!-- Ventana de Reactivación de Hepatitis B -->
+<div id="reactivacion_hepatitis_b" class="ventana">
+    <h2>Reactivación de Hepatitis B</h2>
+    <p>No necesita manejo.</p>
+    <button onclick="abrirVentana('rituximab')">Volver a Rituximab</button>
+</div>
+
+<!-- Ventana de Astenia -->
+<div id="astenia" class="ventana">
+    <h2>Astenia</h2>
+    <p>No necesita manejo.</p>
+    <button onclick="abrirVentana('rituximab')">Volver a Rituximab</button>
+</div>
+
+<!-- Ventana de Reacciones Cardiovasculares (segundo caso) -->
+<div id="reacciones_cardiovasculares1" class="ventana">
+    <h2>Reacciones Cardiovasculares</h2>
+    <p>No necesita manejo.</p>
+    <button onclick="abrirVentana('rituximab')">Volver a Rituximab</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Ventana de Diagrama -->
+    <div id="diagrama" class="ventana" style="display: none;">
+        <h2>Diagrama de Flujo</h2>
+        <img src="imagen.png" alt="Diagrama de Flujo" style="max-width: 100%; height: auto;">
+        <button onclick="abrirVentana('inicio')">Volver al Inicio</button>
+    </div>
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
